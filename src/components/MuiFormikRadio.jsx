@@ -10,7 +10,7 @@ import {
 function MuiFormikRadio(props) {
   const { name, label, formik, options, ...rest } = props;
   const labelid = label + "-label";
-  // console.log(rest);
+  // console.log(formik);
 
   return (
     <div>
@@ -19,21 +19,20 @@ function MuiFormikRadio(props) {
         <RadioGroup
           area-aria-labelledby={labelid}
           name={name}
-          label={label}
           value={formik.values[name]}
           onChange={formik.handleChange}
-          error={formik.touched[name] && Boolean(formik.errors[name])}
-          onBlur={formik.handleBlur}
           {...rest}
         >
           {options.map((option) => {
             return (
-              <FormControlLabel
-                value={option.value}
-                control={<Radio />}
-                key={option.key}
-                label={option.key}
-              />
+              <React.Fragment key={option.key}>
+                <FormControlLabel
+                  control={<Radio />}
+                  value={option.value}
+                  // key={option.key}
+                  label={option.key}
+                />
+              </React.Fragment>
             );
           })}
         </RadioGroup>

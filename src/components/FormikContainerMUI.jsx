@@ -38,8 +38,8 @@ function FormikContainerMUI() {
     firstName: Yup.string().required("First name is required"),
     lastName: Yup.string().required("Last name is required."),
     email: Yup.string().email("Enter a valid email").required("Email required"),
-    selectSkills: Yup.string().required("Please select a skill"),
-    // selectRadio: Yup.string().required("Please select a skill"),
+    selectDropdown: Yup.string().required("Please make a selection"),
+    selectRadio: Yup.string().required("Please select a radio button"),
     // phone: Yup.number()
     //   .integer()
     //   .typeError("Please enter a valid phone number.")
@@ -51,7 +51,8 @@ function FormikContainerMUI() {
       firstName: "",
       lastName: "",
       email: "",
-      selectSkills: "",
+      selectDropdown: "",
+      selectRadio: "rOption1",
     },
     onSubmit: (values) => {
       console.log("Form submitted.");
@@ -85,17 +86,17 @@ function FormikContainerMUI() {
           formik={formik}
         />
         <MuiFormikSelect
-          name="selectSkills"
+          name="selectDropdown"
           label="Select a Skill"
           formik={formik}
           options={dropdownOptions}
         />
-        {/* <MuiFormikRadio
-          name="radioChoice"
+        <MuiFormikRadio
+          name="selectRadio"
           label="Choose One"
           formik={formik}
           options={radioOptions}
-        /> */}
+        />
 
         <Button type="submit" variant="outlined">
           Submit
