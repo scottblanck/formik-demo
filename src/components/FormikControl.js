@@ -5,11 +5,19 @@ import Select from "./Select";
 import RadioButtons from "./RadioButtons";
 import CheckboxGroup from "./CheckboxGroup";
 import DatePicker from "./DatePicker";
-import ChakraInput from "./ChakraInput";
+
+// Use this component for ALL formik objects
+//
+// PROPS TO PASS IN:
+// label
+// name
+// options - for select,radio, checkbox groups
+//
 
 function FormikControl(props) {
   const { control, ...rest } = props;
   switch (control) {
+    // ******* Vanilla HTML Components **********
     case "input":
       return <Input {...rest} />;
     case "textarea":
@@ -20,10 +28,10 @@ function FormikControl(props) {
       return <RadioButtons {...rest} />;
     case "checkbox":
       return <CheckboxGroup {...rest} />;
+
+    // ************* DatePicker *****************
     case "date":
       return <DatePicker {...rest} />;
-    case "chakraInput":
-      return <ChakraInput {...rest} />;
     default:
       return null;
   }

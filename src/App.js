@@ -1,24 +1,26 @@
 import React from "react";
 import "./App.css";
-import FormikContainer from "./components/FormikContainer";
 import YoutubeForm from "./components/examples-demo-form/YoutubeForm"; // Lots of examples
 import LoginForm from "./components/prebuilt-form-templates/LoginForm";
 import RegistrationForm from "./components/prebuilt-form-templates/RegistrationForm";
 import EnrollmentForm from "./components/prebuilt-form-templates/EnrollmentForm";
 
-// import { ChakraProvider } from "@chakra-ui/react";
+import FormikContainer from "./components/FormikContainer"; // Master template for vanilla-HTML components with Formik
+import FormikContainerMUI from "./components/FormikContainerMUI"; // Master template for MUI components with Formik
+import MuiTextFieldModel from "./components/examples-demo-form/MuiTextField-example";
 
 function App() {
   return (
-    // <ChakraProvider>
     <div className="App">
-      {/* <YoutubeForm /> */}
+      {/* <MuiTextFieldModel /> */}
+      <FormikContainerMUI />
       {/* <FormikContainer /> */}
-      <LoginForm />
+      {/* <YoutubeForm /> */}
+      {/* <LoginForm /> */}
       {/* <RegistrationForm /> */}
-      <EnrollmentForm />
+      {/* <EnrollmentForm /> */}
+      {/* <MuiTextFieldModel /> */}
     </div>
-    // </ChakraProvider>
   );
 }
 
