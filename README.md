@@ -6,3 +6,8 @@ There is also Formik-MUI integration using the Formik hook.
 
 Credit: The inital HTML objects were made using the tutorial from Codevolution on YouTube. Awesome channel!
 
+
+// To use these components:
+// npm install formik
+// npm install yup  (used for form field validation, very useful, docs on github)
+// npm install @mui/material @emotion/react @emotion/styled
