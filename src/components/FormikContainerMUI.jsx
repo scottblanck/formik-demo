@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import MuiFormikField from "./MuiFormikField";
 import MuiFormikSelect from "./MuiFormikSelect";
 import MuiFormikRadio from "./MuiFormikRadio";
+import MuiFormikCheckboxGroup from "./MuiFormikCheckboxGroup";
 
 // Test container to use Formik controls WITH MUI. Copy boilerplate code from here. - Scott
 //
@@ -28,9 +29,9 @@ function FormikContainerMUI() {
     { key: "Radio Option 3", value: "rOption3" },
   ];
   const checkboxOptions = [
-    { key: "Option 1", value: "cOption1" },
-    { key: "Option 2", value: "cOption2" },
-    { key: "Option 3", value: "cOption3" },
+    { key: "Check Option 1", value: "cOption1" },
+    { key: "Check Option 2", value: "cOption2" },
+    { key: "Check Option 3", value: "cOption3" },
   ];
 
   // Validation schema for Yup
@@ -40,6 +41,7 @@ function FormikContainerMUI() {
     email: Yup.string().email("Enter a valid email").required("Email required"),
     selectDropdown: Yup.string().required("Please make a selection"),
     selectRadio: Yup.string().required("Please select a radio button"),
+    checkBoxes: Yup.array(),
     // phone: Yup.number()
     //   .integer()
     //   .typeError("Please enter a valid phone number.")
@@ -53,6 +55,7 @@ function FormikContainerMUI() {
       email: "",
       selectDropdown: "",
       selectRadio: "rOption1",
+      checkBoxes: [],
     },
     onSubmit: (values) => {
       console.log("Form submitted.");
@@ -96,6 +99,12 @@ function FormikContainerMUI() {
           label="Choose One"
           formik={formik}
           options={radioOptions}
+        />
+        <MuiFormikCheckboxGroup
+          name="checkBoxes"
+          label="Checkboxes Demo"
+          formik={formik}
+          options={checkboxOptions}
         />
 
         <Button type="submit" variant="outlined">

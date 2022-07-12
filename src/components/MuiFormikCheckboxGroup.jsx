@@ -4,38 +4,38 @@ import {
   FormControl,
   FormLabel,
   FormControlLabel,
-  RadioGroup,
-  Radio,
   FormGroup,
+  Checkbox,
 } from "@mui/material";
 
 function MuiFormikCheckboxGroup(props) {
   const { name, label, formik, options, ...rest } = props;
   const labelid = label + "-label";
-  console.log(formik);
+  // console.log("props", props);
 
   return (
     <Box>
-       <FormControl fullWidth>
+      <FormControl fullWidth>
         <FormLabel id={labelid}>{label}</FormLabel>
-      <FormGroup>
-          {options.map(option => {
+        <FormGroup>
+          {options.map((option) => {
             return (
               <React.Fragment key={option.key}>
-                <
-                  type='checkbox'
-                  id={option.value}
-                  {...field}
-                  {...rest}
+                <FormControlLabel
+                  label={option.key}
                   value={option.value}
-                  checked={formik.field.value.includes(option.value)}
+                  control={
+                    <Checkbox
+                      id={name}
+                      checked={formik.values[name].includes(option.value)}
+                      onChange={formik.handleChange}
+                    />
+                  }
                 />
               </React.Fragment>
-            )
-          })
-        }}
-
-      </FormGroup>
+            );
+          })}
+        </FormGroup>
       </FormControl>
     </Box>
   );
