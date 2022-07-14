@@ -153,6 +153,7 @@ function RegistrationFormMui() {
           field={TextField}
           name='password'
           label='Password'
+          type='password'
           formik={formik}
         />
         <h4>Confirm password</h4>
@@ -160,6 +161,7 @@ function RegistrationFormMui() {
           field={TextField}
           name='confirmPassword'
           label='Confirm Password'
+          type='password'
           formik={formik}
         />
         <h5>
