@@ -1,4 +1,4 @@
-# React with Formik sample code
+# React with Formik sample code with Yup validation
 
 This project contains formik code and some sample forms for React.
 
