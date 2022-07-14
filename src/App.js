@@ -1,27 +1,29 @@
-import React from "react";
-import "./App.css";
-import YoutubeForm from "./components/examples-demo-form/YoutubeForm"; // Lots of examples
-import LoginForm from "./components/prebuilt-form-templates/LoginForm";
-import RegistrationForm from "./components/prebuilt-form-templates/RegistrationForm";
-import EnrollmentForm from "./components/prebuilt-form-templates/EnrollmentForm";
+import React from 'react'
+import './App.css'
 
-import FormikContainer from "./components/FormikContainer"; // Master template for vanilla-HTML components with Formik
-import FormikContainerMUI from "./components/FormikContainerMUI"; // Master template for MUI components with Formik
-import MuiTextFieldModel from "./components/examples-demo-form/MuiTextField-example";
+/* eslint-disable */
+import YoutubeForm from './components/examples-demo-form/YoutubeForm' // Lots of examples
+import LoginForm from './components/_prebuilt-form-templates/LoginForm'
+import RegistrationForm from './components/_prebuilt-form-templates/RegistrationForm'
+import EnrollmentForm from './components/_prebuilt-form-templates/EnrollmentForm'
+
+import FormikContainer from './components/_FormikContainer' // Master template for vanilla-HTML components with Formik
+import FormikContainerMUI from './components/_FormikContainerMUI' // Master template for MUI components with Formik
+import RegistrationFormMui from './components/_prebuilt-form-templates/RegistrationFormMui'
+/* esline-enable */
 
 function App() {
   return (
-    <div className="App">
-      {/* <MuiTextFieldModel /> */}
-      <FormikContainerMUI />
+    <div className='App'>
+      <RegistrationFormMui />
+      {/* <FormikContainerMUI /> */}
       {/* <FormikContainer /> */}
       {/* <YoutubeForm /> */}
       {/* <LoginForm /> */}
       {/* <RegistrationForm /> */}
       {/* <EnrollmentForm /> */}
-      {/* <MuiTextFieldModel /> */}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
