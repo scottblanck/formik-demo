@@ -44,6 +44,7 @@ function FormikContainerMUI() {
     selectDropdown: Yup.string().required('Please make a selection'),
     selectRadio: Yup.string().required('Please select a radio button'),
     checkBoxes: Yup.array(),
+    startTime: Yup.string().required('Format - hh:mm AM/PM'),
     // phone: Yup.number()
     //   .integer()
     //   .typeError("Please enter a valid phone number.")
@@ -59,6 +60,7 @@ function FormikContainerMUI() {
       selectRadio: 'rOption1',
       checkBoxes: [],
       check1: [], // Can just check list length > 0 for a single checkbox
+      startTime: '',
     },
     onSubmit: (values) => {
       console.log('Form submitted.')
@@ -93,6 +95,15 @@ function FormikContainerMUI() {
           name='email'
           label='Email'
           sx={{ width: 400, paddingRight: 1, paddingTop: 1 }}
+          formik={formik}
+        />
+        <h4>Time Text Field</h4>
+        <MuiFormikField
+          field={TextField}
+          name='startTime'
+          label='Start Time'
+          type='time'
+          sx={{ width: 175, paddingRight: 1, paddingTop: 1 }}
           formik={formik}
         />
         <h4>Select Dropdown</h4>
