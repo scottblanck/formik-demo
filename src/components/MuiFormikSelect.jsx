@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react'
 import {
   FormControl,
   FormHelperText,
   MenuItem,
   Select,
   InputLabel,
-} from "@mui/material";
+} from '@mui/material'
 
 function MuiFormikSelect(props) {
-  const { name, label, formik, options, ...rest } = props;
-  const labelid = label + "-label";
+  const { name, label, formik, options, ...rest } = props
+  const labelid = label + '-label'
   // console.log(rest);
 
   return (
@@ -29,15 +29,15 @@ function MuiFormikSelect(props) {
         >
           {options.map((option) => {
             return (
-              <MenuItem key={option.value} value={option.value}>
-                {option.value}
+              <MenuItem key={option.key} value={option.value}>
+                {option.key}
               </MenuItem>
-            );
+            )
           })}
         </Select>
       </FormControl>
     </div>
-  );
+  )
 }
 
-export default MuiFormikSelect;
+export default MuiFormikSelect

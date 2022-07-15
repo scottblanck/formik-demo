@@ -5,7 +5,7 @@ import MuiFormikField from '../MuiFormikField'
 import MuiFormikRadio from '../MuiFormikRadio'
 import { TextField, Container } from '@mui/material'
 
-function RegistrationFormMui() {
+export const RegistrationFormMui = () => {
   // For the radio button group
   const radioOptions = [
     { key: 'Male', value: 'male' },
