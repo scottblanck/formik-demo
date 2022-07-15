@@ -17,11 +17,11 @@ function App() {
   return (
     <div className='App'>
       {/*** Pre-built forms using MUI  ***/}
-      <ProfileEditFormMui />
+      {/* <ProfileEditFormMui /> */}
       {/* <RegistrationFormMui /> */}
 
       {/*** FormikContainer objects show all the available component types and stub code ***/}
-      {/* <FormikContainerMUI /> */}
+      <FormikContainerMUI />
       {/* <FormikContainer /> */}
 
       {/*** General purpose forms NOT using MUI ***/}

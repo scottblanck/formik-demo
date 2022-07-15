@@ -7,7 +7,7 @@ import { TextField, Container } from '@mui/material'
 import MuiFormikSelect from '../MuiFormikSelect'
 
 export const ProfileEditFormMui = (props) => {
-  const { userType } = props
+  //const { userType } = props
 
   // For the radio button group
   const radioOptions = [

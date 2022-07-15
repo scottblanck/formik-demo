@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  FormControl,
-  FormHelperText,
-  MenuItem,
-  Select,
-  InputLabel,
-} from '@mui/material'
+import { FormControl, MenuItem, Select, InputLabel } from '@mui/material'
 
 function MuiFormikSelect(props) {
   const { name, label, formik, options, ...rest } = props

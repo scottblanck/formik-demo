@@ -1,8 +1,10 @@
-import React from "react";
-import { TextField } from "@mui/material";
+import React from 'react'
+
+// General component used for all self closing MUI components with Formik.
+// See _FormikContainerMUI.jsx file for examples
 
 function MuiFormikField(props) {
-  const { name, label, formik, ...rest } = props;
+  const { name, label, formik, ...rest } = props
   // console.log(rest);
 
   return (
@@ -17,7 +19,7 @@ function MuiFormikField(props) {
       onBlur={formik.handleBlur}
       {...rest}
     />
-  );
+  )
 }
 
-export default MuiFormikField;
+export default MuiFormikField
