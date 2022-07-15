@@ -9,5 +9,7 @@ Credit: The inital HTML objects were made using the tutorial from Codevolution o
 # To use these components:
 
 npm install formik
-npm install yup (used for form field validation, very useful, docs on github)
+
+npm install yup (used for form field validation, very useful, docs here - https://github.com/jquense/yup)
+
 npm install @mui/material @emotion/react @emotion/styled
