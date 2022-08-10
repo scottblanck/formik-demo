@@ -45,6 +45,10 @@ function FormikContainerMUI() {
     selectRadio: Yup.string().required('Please select a radio button'),
     checkBoxes: Yup.array(),
     startTime: Yup.string().required('Format - hh:mm AM/PM'),
+    birthDate: Yup.date()
+      .required('Birth date required')
+      .min('1910-01-01', 'Date invalid - choose a later date')
+      .max(new Date(), "You can't be born in the future!"),
     // phone: Yup.number()
     //   .integer()
     //   .typeError("Please enter a valid phone number.")
@@ -61,6 +65,7 @@ function FormikContainerMUI() {
       checkBoxes: [],
       check1: [], // Can just check list length > 0 for a single checkbox
       startTime: '',
+      birthDate: '',
     },
     onSubmit: (values) => {
       console.log('Form submitted.')
@@ -95,6 +100,15 @@ function FormikContainerMUI() {
           name='email'
           label='Email'
           sx={{ width: 400, paddingRight: 1, paddingTop: 1 }}
+          formik={formik}
+        />
+        <h4>Date Text Field</h4>
+        <MuiFormikField
+          field={TextField}
+          name='birthDate'
+          label='Birth date'
+          type='date'
+          sx={{ width: 175, paddingRight: 1, paddingTop: 1 }}
           formik={formik}
         />
         <h4>Time Text Field</h4>

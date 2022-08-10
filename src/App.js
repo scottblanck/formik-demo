@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css'
+import { Stack } from '@mui/material'
 
 /* eslint-disable */
 import YoutubeForm from './components/examples-demo-form/YoutubeForm' // Lots of examples
@@ -16,19 +17,24 @@ import ProfileEditFormMui from './components/_prebuilt-form-templates/ProfileEdi
 function App() {
   return (
     <div className='App'>
-      {/*** Pre-built forms using MUI  ***/}
-      {/* <ProfileEditFormMui /> */}
-      {/* <RegistrationFormMui /> */}
+      <Stack>
+        {/*** Pre-built forms using MUI  ***/}
+        {/* <ProfileEditFormMui /> */}
+        {/* <RegistrationFormMui /> */}
 
-      {/*** FormikContainer objects show all the available component types and stub code ***/}
-      <FormikContainerMUI />
-      {/* <FormikContainer /> */}
+        {/*** FormikContainer objects show all the available component types and stub code ***/}
+        <h2>MUI examples</h2>
+        <FormikContainerMUI />
 
-      {/*** General purpose forms NOT using MUI ***/}
-      {/* <YoutubeForm /> */}
-      {/* <LoginForm /> */}
-      {/* <RegistrationForm /> */}
-      {/* <EnrollmentForm /> */}
+        <h2>Non-Mui examples</h2>
+        <FormikContainer />
+
+        {/*** General purpose forms NOT using MUI ***/}
+        {/* <YoutubeForm /> */}
+        {/* <LoginForm /> */}
+        {/* <RegistrationForm /> */}
+        {/* <EnrollmentForm /> */}
+      </Stack>
     </div>
   )
 }
