@@ -108,6 +108,7 @@ function FormikContainerMUI() {
           name='birthDate'
           label='Birth date'
           type='date'
+          InputLabelProps={{ shrink: true }} // keeps empty date from overriding label
           sx={{ width: 175, paddingRight: 1, paddingTop: 1 }}
           formik={formik}
         />
