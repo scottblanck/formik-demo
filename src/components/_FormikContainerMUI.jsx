@@ -73,6 +73,7 @@ function FormikContainerMUI() {
       // console.log(JSON.stringify(values));
     },
     validationSchema: validationSchema,
+    enableReinitialze: true, // Needed when loading from context or API with delay
   })
 
   return (
@@ -102,7 +103,21 @@ function FormikContainerMUI() {
           sx={{ width: 400, paddingRight: 1, paddingTop: 1 }}
           formik={formik}
         />
+
         <h4>Date Text Field</h4>
+        {/* IMPORTANT NOTE - This field is formatted YYYY-MM-DD
+        Therefore if you are required to use UNIX time for database purposes,
+        use this code to convert either way...
+
+        // Convert field to Unix time
+        data['DOB'] = new Date(data['DOB']).getTime() / 1000 // from millis to seconds
+
+        // Convert unix time back to YYYY-MM-DD
+        const dateObject = new Date(result.data.updateUser.DOB * 1000 + 360) // add hour for DST
+        const humanDateFormat = dateObject.toISOString().split('T')[0] // Remove the time part of the string
+        _.set(result, 'data.updateUser.DOB', humanDateFormat)
+        console.log('Readable date:', humanDateFormat)
+        */}
         <MuiFormikField
           field={TextField}
           name='birthDate'
@@ -112,6 +127,7 @@ function FormikContainerMUI() {
           sx={{ width: 175, paddingRight: 1, paddingTop: 1 }}
           formik={formik}
         />
+
         <h4>Time Text Field</h4>
         <MuiFormikField
           field={TextField}
